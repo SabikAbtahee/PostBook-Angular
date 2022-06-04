@@ -1,0 +1,190 @@
+// width
+$count: 0;
+@while $count < 2000 {
+	$count: $count + 4;
+	.w-#{$count} {
+		width: 0px + $count;
+		min-width: 0px + $count;
+		max-width: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count <= 100 {
+	$count: $count + 2;
+	.w-#{$count}-p {
+		width: 0% + $count;
+		min-width: 0% + $count;
+		max-width: 0% + $count;
+	}
+}
+
+// height
+$count: 0;
+@while $count < 2000 {
+	$count: $count + 4;
+	.h-#{$count} {
+		height: 0px + $count;
+		min-height: 0px + $count;
+		max-height: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count <= 100 {
+	$count: $count + 2;
+	.h-#{$count}-p {
+		height: 0% + $count;
+		min-height: 0% + $count;
+		max-height: 0% + $count;
+	}
+}
+
+// font-size
+$count: 0;
+@while $count < 500 {
+	$count: $count + 2;
+	.font-size-#{$count} {
+		font-size: 0px + $count;
+	}
+}
+
+// font-weight
+$count: 0;
+@while $count < 10000 {
+	$count: $count + 100;
+	.font-weight-#{$count} {
+		font-weight: 0 + $count;
+	}
+}
+
+// margin
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.m-#{$count} {
+		margin: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.mr-#{$count} {
+		margin-right: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.ml-#{$count} {
+		margin-left: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.mt-#{$count} {
+		margin-top: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.mb-#{$count} {
+		margin-bottom: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.mx-#{$count} {
+		margin-right: 0px + $count;
+		margin-left: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.my-#{$count} {
+		margin-top: 0px + $count;
+		margin-bottom: 0px + $count;
+	}
+}
+
+// padding
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.p-#{$count} {
+		padding: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.pr-#{$count} {
+		padding-right: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.pl-#{$count} {
+		padding-left: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.pt-#{$count} {
+		padding-top: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.pb-#{$count} {
+		padding-bottom: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.px-#{$count} {
+		padding-right: 0px + $count;
+		padding-left: 0px + $count;
+	}
+}
+
+$count: 0;
+@while $count < 400 {
+	$count: $count + 4;
+	.py-#{$count} {
+		padding-top: 0px + $count;
+		padding-bottom: 0px + $count;
+	}
+}
+
+// letter-spacing
+
+$count: 0;
+@while $count < 4 {
+	$count: $count + 0.01;
+	$x2: $count * 100;
+	.letter-spacing-#{$x2} {
+		letter-spacing: 0px + $count;
+	}
+}
