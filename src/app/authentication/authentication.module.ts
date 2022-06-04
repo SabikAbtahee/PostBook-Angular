@@ -5,6 +5,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { SetNewPasswordComponent } from './components/set-new-password/set-new-password.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from '../shared/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
 	{
@@ -36,6 +38,6 @@ const routes: Routes = [
 		ForgotPasswordComponent,
 		SetNewPasswordComponent
 	],
-	imports: [CommonModule, RouterModule.forChild(routes)]
+	imports: [CommonModule, MaterialModule, SharedModule, RouterModule.forChild(routes)]
 })
 export class AuthenticationModule {}

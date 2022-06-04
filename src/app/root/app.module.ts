@@ -9,21 +9,19 @@ import { ToolBarComponent } from './tool-bar/tool-bar.component';
 import { SideNavigationComponent } from './side-navigation/side-navigation.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RootService } from './services/root.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BlankLayoutComponent,
-    ToolBarSideNavLayoutComponent,
-    ToolBarComponent,
-    SideNavigationComponent,
-    NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [RootService],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		BlankLayoutComponent,
+		ToolBarSideNavLayoutComponent,
+		ToolBarComponent,
+		SideNavigationComponent,
+		NotFoundComponent
+	],
+	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+	providers: [RootService],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
