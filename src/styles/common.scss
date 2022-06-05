@@ -188,3 +188,21 @@ $count: 0;
 		letter-spacing: 0px + $count;
 	}
 }
+
+// border-radius
+
+$count: 0;
+@while $count < 100 {
+	$count: $count + 2;
+	.border-radius-#{$count}-p {
+		border-radius: 0% + $count;
+	}
+}
+
+$count: 0;
+@while $count < 100 {
+	$count: $count + 2;
+	.border-radius-#{$count} {
+		border-radius: 0px + $count;
+	}
+}

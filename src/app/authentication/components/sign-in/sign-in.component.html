@@ -1,4 +1,65 @@
-<div fxLayout="row" fxLayoutAlign="center center">
-	<div class="w-10-p m-20">Sign In</div>
-	<div class="letter-spacing-200">Hello man</div>
+<div class="h-100-p" fxLayout="column" fxLayoutAlign="center center">
+	<div class="p-24 mat-elevation-z2">
+		<div></div>
+		<div>
+			<div>Sign In</div>
+			<div>Don't have an account? <span>Sign up</span></div>
+		</div>
+		<form [formGroup]="signInForm">
+			<div>
+				<div>
+					<mat-form-field appearance="outline">
+						<!-- <mat-label>Email Address</mat-label> -->
+						<input formControlName="Email" type="email" matInput placeholder="Email Address" />
+						<mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+						<mat-hint>Enter your account's email address</mat-hint>
+					</mat-form-field>
+				</div>
+				<div>
+					<mat-form-field appearance="outline" color="primary">
+						<!-- <mat-label>Password</mat-label> -->
+						<input formControlName="Password" type="password" matInput />
+						<mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+						<mat-hint>Enter your password</mat-hint>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<div fxLayout="row" fxLayoutAlign="space-between center">
+				<div>
+					<mat-checkbox class="mr-12">Remember me</mat-checkbox>
+				</div>
+				<div>
+					<span>Forgot Password?</span>
+				</div>
+			</div>
+
+			<div fxLayout="row" fxLayoutAlign="center center" class="w-100-p">
+				<button mat-raised-button color="primary" class="w-100-p" (click)="submit()">
+					Sign In
+				</button>
+			</div>
+		</form>
+
+		<!-- Other login providers -->
+		<!-- <div class="my-20"><mat-divider class="w-100-p"></mat-divider></div>
+
+		<div fxLayout="row" fxLayoutAlign="space-between center" class="w-100-p">
+			<div>
+				<button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+					<mat-icon>bookmark</mat-icon>
+				</button>
+			</div>
+			<div>
+				<button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+					<mat-icon>bookmark</mat-icon>
+				</button>
+			</div>
+			<div>
+				<button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+					<mat-icon>bookmark</mat-icon>
+				</button>
+			</div>
+		</div> -->
+	</div>
 </div>
