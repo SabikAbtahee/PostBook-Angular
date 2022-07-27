@@ -2,8 +2,19 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { environmentDefault } from './environment.default';
+
+const baseUrl = 'http://localhost:3000';
+
 export const environment = {
-  production: false
+	...environmentDefault,
+	production: false,
+
+	//Auth Endpoints
+	SignIn: `${baseUrl}/auth/signin`,
+	SignUp: `${baseUrl}/auth/signup`,
+	LogOut: `${baseUrl}/auth/logout`,
+	RefreshToken: `${baseUrl}/auth/refresh`
 };
 
 /*
