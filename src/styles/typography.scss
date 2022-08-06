@@ -1,0 +1,109 @@
+$legacySerifITC-Bk-It: 'LegacySerifITC W02 Bk It';
+$legacySerifITC-Bk: 'LegacySerifITC W02 Bk';
+$legacySerifITC-Bk-Bold: 'LegacySerifITC W02 Bk bold';
+$din-regular: 'DIN-Regular';
+
+@font-face {
+	font-family: 'DIN-Regular';
+	src: url('/assets/fonts/DIN-Regular/DIN-Regular.eot');
+	src: url('/assets/fonts/DIN-Regular/DIN-Regular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/DIN-Regular/DIN-Regular.woff2') format('woff2'),
+		url('/assets/fonts/DIN-Regular/DIN-Regular.woff') format('woff'),
+		url('/assets/fonts/DIN-Regular/DIN-Regular.ttf') format('truetype'),
+		url('/assets/fonts/DIN-Regular/DIN-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LegacySerifITC W02 Bk';
+	src: url('./assets/fonts/itclegacyserif-lt-book/97c2c577-bf8e-4708-baff-001fd32f4d08.eot?#iefix');
+	src: url('./assets/fonts/itclegacyserif-lt-book/97c2c577-bf8e-4708-baff-001fd32f4d08.eot?#iefix')
+			format('eot'),
+		url('./assets/fonts/itclegacyserif-lt-book/1aa4f478-0211-4879-a4e6-a0be4a43e71e.woff2')
+			format('woff2'),
+		url('./assets/fonts/itclegacyserif-lt-book/54a75543-b5b3-45e1-81aa-b1ad5b50a901.woff')
+			format('woff'),
+		url('./assets/fonts/itclegacyserif-lt-book/dfbf3526-722f-44ca-8fc1-5b07cb575fd0.ttf')
+			format('truetype'),
+		url('./assets/fonts/itclegacyserif-lt-book/4b98962c-8d65-43ea-a240-c89d3b801521.svg#4b98962c-8d65-43ea-a240-c89d3b801521')
+			format('svg');
+}
+
+@font-face {
+	font-family: 'LegacySerifITC W02 Bk It';
+	src: url('./assets/fonts/itclegacyserif-lt-book/b5f110df-dc07-4adc-866a-ec62f641ac54.eot?#iefix');
+	src: url('./assets/fonts/itclegacyserif-lt-book/b5f110df-dc07-4adc-866a-ec62f641ac54.eot?#iefix')
+			format('eot'),
+		url('./assets/fonts/itclegacyserif-lt-book/legacyserifitcw02-bkit.woff2') format('woff2'),
+		url('./assets/fonts/itclegacyserif-lt-book/legacyserifitcw02-bkit.woff') format('woff'),
+		url('./assets/fonts/itclegacyserif-lt-book/6103ef63-5116-480b-b304-6b5bb947cfee.ttf')
+			format('truetype'),
+		url('./assets/fonts/itclegacyserif-lt-book/18a4456b-29a7-49ae-85d5-60b89bbdf95d.svg#18a4456b-29a7-49ae-85d5-60b89bbdf95d')
+			format('svg');
+}
+
+@font-face {
+	font-family: 'LegacySerifITC W02 Bk bold';
+	src: url('./assets/fonts/itclegacyserif-lt-book/lte52472-webfont.eot');
+	src: url('./assets/fonts/itclegacyserif-lt-book/lte52472-webfont.eot?#iefix')
+			format('embedded-opentype'),
+		url('./assets/fonts/itclegacyserif-lt-book/lte52472-webfont.woff2') format('woff2'),
+		url('./assets/fonts/itclegacyserif-lt-book/lte52472-webfont.woff') format('woff'),
+		url('./assets/fonts/itclegacyserif-lt-book/lte52472-webfont.ttf') format('truetype'),
+		url('./assets/fonts/itclegacyserif-lt-book/lte52472-webfont.svg#itclegacyserif_lt_boldregular')
+			format('svg');
+}
+
+.header-1 {
+	font-size: 34px;
+	letter-spacing: 0.25px;
+	font-family: $legacySerifITC-Bk-It;
+}
+
+.header-2 {
+	font-size: 24px;
+	letter-spacing: 0.25px;
+	font-family: $legacySerifITC-Bk;
+}
+
+.header-3 {
+	font-size: 20px;
+	font-family: $legacySerifITC-Bk;
+}
+
+.subtitle-1 {
+	font-family: $din-regular;
+	font-size: 18px;
+	letter-spacing: 0.25px;
+}
+
+.subtitle-2 {
+	font-family: $din-regular;
+	font-size: 16px;
+	letter-spacing: 0.1px;
+}
+
+.body-1 {
+	font-family: $din-regular;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+}
+
+.body-2 {
+	font-family: $din-regular;
+	font-size: 16px;
+	letter-spacing: 0.1px;
+}
+
+.caption-1 {
+	font-family: $din-regular;
+	font-size: 14px;
+	letter-spacing: 0.4px;
+}
+
+.caption-2 {
+	font-family: $din-regular;
+	font-size: 12px;
+	letter-spacing: 0.4px;
+}

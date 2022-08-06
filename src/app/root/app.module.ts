@@ -10,6 +10,10 @@ import { SideNavigationComponent } from './side-navigation/side-navigation.compo
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RootService } from './services/root.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '../shared/shared.module';
+import { CoreModule } from '../core/core.module';
+import { ConfigModule } from '../config/config.module';
+import { MaterialModule } from '../shared/material.module';
 
 @NgModule({
 	declarations: [
@@ -20,7 +24,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		SideNavigationComponent,
 		NotFoundComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		SharedModule,
+		CoreModule,
+		ConfigModule,
+		MaterialModule
+	],
 	providers: [RootService],
 	bootstrap: [AppComponent]
 })

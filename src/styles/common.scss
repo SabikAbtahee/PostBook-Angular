@@ -124,7 +124,7 @@ $count: 0;
 @while $count < 400 {
 	$count: $count + 4;
 	.p-#{$count} {
-		padding: 0px + $count;
+		padding: 0px + $count !important;
 	}
 }
 
@@ -132,7 +132,7 @@ $count: 0;
 @while $count < 400 {
 	$count: $count + 4;
 	.pr-#{$count} {
-		padding-right: 0px + $count;
+		padding-right: 0px + $count !important;
 	}
 }
 
@@ -140,7 +140,7 @@ $count: 0;
 @while $count < 400 {
 	$count: $count + 4;
 	.pl-#{$count} {
-		padding-left: 0px + $count;
+		padding-left: 0px + $count !important;
 	}
 }
 
@@ -148,7 +148,7 @@ $count: 0;
 @while $count < 400 {
 	$count: $count + 4;
 	.pt-#{$count} {
-		padding-top: 0px + $count;
+		padding-top: 0px + $count !important;
 	}
 }
 
@@ -156,7 +156,7 @@ $count: 0;
 @while $count < 400 {
 	$count: $count + 4;
 	.pb-#{$count} {
-		padding-bottom: 0px + $count;
+		padding-bottom: 0px + $count !important;
 	}
 }
 
@@ -164,8 +164,8 @@ $count: 0;
 @while $count < 400 {
 	$count: $count + 4;
 	.px-#{$count} {
-		padding-right: 0px + $count;
-		padding-left: 0px + $count;
+		padding-right: 0px + $count !important;
+		padding-left: 0px + $count !important;
 	}
 }
 
@@ -173,8 +173,8 @@ $count: 0;
 @while $count < 400 {
 	$count: $count + 4;
 	.py-#{$count} {
-		padding-top: 0px + $count;
-		padding-bottom: 0px + $count;
+		padding-top: 0px + $count !important;
+		padding-bottom: 0px + $count !important;
 	}
 }
 

@@ -1,1 +1,3 @@
-export const environmentDefault = {};
+export const environmentDefault = {
+	PortalName: 'PostBook'
+};

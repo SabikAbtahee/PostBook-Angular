@@ -6,9 +6,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { SetNewPasswordComponent } from './components/set-new-password/set-new-password.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../shared/material.module';
-import { SharedModule } from '../shared/shared.module';
 import { AuthenticationService } from './services/authentication.service';
-import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from '../core/core.module';
+import { SharedModule } from '@shared';
 
 const routes: Routes = [
 	{
@@ -40,13 +40,7 @@ const routes: Routes = [
 		ForgotPasswordComponent,
 		SetNewPasswordComponent
 	],
-	imports: [
-		CommonModule,
-		MaterialModule,
-		SharedModule,
-		RouterModule.forChild(routes),
-		HttpClientModule
-	],
+	imports: [CommonModule, MaterialModule, SharedModule, CoreModule, RouterModule.forChild(routes)],
 	providers: [AuthenticationService]
 })
 export class AuthenticationModule {}
