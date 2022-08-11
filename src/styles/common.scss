@@ -45,7 +45,7 @@ $count: 0;
 @while $count < 500 {
 	$count: $count + 2;
 	.font-size-#{$count} {
-		font-size: 0px + $count;
+		font-size: 0px + $count !important;
 	}
 }
 

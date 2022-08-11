@@ -1,1 +1,123 @@
-<p>sign-up works!</p>
+<form [formGroup]="signUpForm">
+	<div fxLayout="column" fxLayoutAlign="center center">
+		<div fxLayout="row" fxLayoutAlign="center center" class="pt-124 pb-48 header-1">
+			Sign up to PostBook
+		</div>
+		<div
+			fxLayout="column"
+			fxLayoutAlign="center stretch"
+			fxLayoutGap="12px"
+			class="margin-auto w-332"
+		>
+			<div>
+				<mat-progress-bar
+					*ngIf="isLoading"
+					mode="indeterminate"
+					color="primary"
+					class="m-0"
+				></mat-progress-bar>
+				<mat-card class="px-28 py-36" [class.mat-elevation-z4]="true">
+					<div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="38px">
+						<div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="12px">
+							<!-- UserName -->
+							<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="12px">
+								<div fxLayout="column" fxLayoutAlign="center" class="mb-24">
+									<i class="material-icons-outlined"> person </i>
+								</div>
+								<div>
+									<mat-form-field appearance="outline" class="w-224">
+										<mat-label>UserName</mat-label>
+										<input matInput placeholder="Type in UserName" formControlName="UserName" />
+										<mat-error *ngIf="signUpForm.get('UserName')?.errors">
+											<span *ngIf="signUpForm.get('UserName')?.errors?.['required']"
+												>UserName is required</span
+											>
+										</mat-error>
+									</mat-form-field>
+								</div>
+							</div>
+
+							<!-- Email -->
+							<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="12px">
+								<div fxLayout="column" fxLayoutAlign="center" class="mb-24">
+									<i class="material-icons-outlined"> email </i>
+								</div>
+								<div>
+									<mat-form-field appearance="outline" class="w-224">
+										<mat-label>Email</mat-label>
+										<input matInput placeholder="Type in Email" formControlName="Email" />
+										<mat-error *ngIf="signUpForm.get('Email')?.errors">
+											<span *ngIf="signUpForm.get('Email')?.errors?.['required']"
+												>Email is required</span
+											>
+											<span *ngIf="signUpForm.get('Email')?.errors?.['email']"
+												>Email is not valid</span
+											>
+										</mat-error>
+									</mat-form-field>
+								</div>
+							</div>
+
+							<!-- Password -->
+							<div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="12px">
+								<div fxLayout="column" fxLayoutAlign="center" class="mb-24">
+									<i class="material-icons-outlined"> lock </i>
+								</div>
+								<div>
+									<mat-form-field appearance="outline" class="w-224">
+										<mat-label>Password</mat-label>
+										<input
+											id="mysecretpassword"
+											type="password"
+											matInput
+											placeholder="Type in passoword "
+											formControlName="Password"
+											showHideInput
+										/>
+
+										<mat-icon
+											class="cursor-pointer"
+											matSuffix
+											showHideTrigger="mysecretpassword"
+										></mat-icon>
+
+										<mat-error *ngIf="signUpForm.get('Password')?.errors">
+											<span *ngIf="signUpForm.get('Password')?.errors?.['required']"
+												>Password is required</span
+											>
+											<span *ngIf="signUpForm.get('Password')?.errors?.['pattern']">
+												Password must be within 6-15 character and contain
+												lowercase,uppercase,number,special character
+											</span>
+										</mat-error>
+									</mat-form-field>
+								</div>
+							</div>
+						</div>
+
+						<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="16px">
+							<button
+								type="submit"
+								(click)="submit()"
+								mat-raised-button
+								color="primary"
+								class="w-260 h-40"
+							>
+								Sign Up
+							</button>
+
+							<!-- <button (click)="goToSignIn()" mat-stroked-button color="primary" class="w-260 h-40">
+								Create Account
+							</button> -->
+						</div>
+					</div>
+				</mat-card>
+			</div>
+		</div>
+		<div fxLayout="row" fxLayoutAlign="end center" class="margin-auto w-332 py-16">
+			<div (click)="goToSignIn()">
+				<a class="cursor-pointer">Already have an account?</a>
+			</div>
+		</div>
+	</div>
+</form>

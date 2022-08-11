@@ -1,0 +1,18 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+	<div fxLayout="row" fxLayoutAlign="center center" class="secondary-color-for-50-bg h-100 w-100">
+		<mat-icon class="font-size-40 h-40 w-40 secondary-color-for">
+			<span class="material-symbols-outlined font-size-40"> check_circle </span>
+		</mat-icon>
+	</div>
+	<div class="px-12">
+		<div>
+			<span class="subtitle-2 primary-text-color">{{ data }}</span>
+		</div>
+	</div>
+	<div fxLayout="row" fxLayoutAlign="center start" class="pr-12 pt-16 h-100">
+		<mat-icon
+			(click)="closeSnackBar()"
+			class="i-Cancel font-size-20 h-20 w-20 secondary-text-color-two cursor-pointer"
+		></mat-icon>
+	</div>
+</div>

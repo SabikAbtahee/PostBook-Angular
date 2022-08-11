@@ -12,7 +12,12 @@ export const routes: Routes = [
 	{
 		path: '',
 		component: ToolBarSideNavLayoutComponent,
-		children: []
+		children: [
+			{
+				path: 'posts',
+				loadChildren: () => import('../posts/posts.module').then((module) => module.PostsModule)
+			}
+		]
 	},
 	{
 		path: '',

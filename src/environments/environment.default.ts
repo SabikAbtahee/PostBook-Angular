@@ -1,3 +1,4 @@
 export const environmentDefault = {
-	PortalName: 'PostBook'
+	PortalName: 'PostBook',
+	PasswordRegex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,15}$/
 };

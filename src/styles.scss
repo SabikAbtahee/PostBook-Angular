@@ -2,6 +2,7 @@
 @import './styles/common.scss';
 @import './styles/typography.scss';
 @import '~@angular/material/theming';
+@import './styles//color.scss';
 
 html,
 body {
@@ -20,4 +21,9 @@ $custom-typography: mat-typography-config(
 body {
 	margin: 0;
 	font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.snackbar {
+	background: white !important;
+	padding: 0px !important;
 }

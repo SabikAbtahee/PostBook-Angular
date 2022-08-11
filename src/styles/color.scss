@@ -1,0 +1,134 @@
+//Color Variables
+$primary-color: #333333;
+$secondary-color: #a7a7a7;
+$secondary-color-two: #808080;
+$secondary-color-three: #666666;
+$primary-background-color: #d82034;
+$secondary-background-color: #ededed;
+$success-color: #00b374;
+$failure-color: #971214;
+$warning-color: #c4b350;
+$custom-icon-color-1: #d82034;
+
+// New Color Guidelinewise
+// Change sn config colors accordingly
+
+$primary-color-red: #d82034;
+$primary-color-black: #000000;
+$primary-color-white: #ffffff;
+$primary-color-grey: #808080;
+
+$secondary-color-bor: #a11c36;
+$secondary-color-bor-300: #c77786;
+$secondary-color-bor-200: #d9a4af;
+$secondary-color-bor-100: #ecd2d7;
+$secondary-color-bor-50: #f4e4e7;
+
+$secondary-color-ter: #c45417;
+$secondary-color-ter-300: #d6875d;
+$secondary-color-ter-200: #e2aa8b;
+$secondary-color-ter-100: #edccb9;
+$secondary-color-ter-50: #f8eae3;
+
+$secondary-color-for: #607e46;
+$secondary-color-for-300: #90a57e;
+$secondary-color-for-200: #b0bfa3;
+$secondary-color-for-100: #cfd8c8;
+$secondary-color-for-50: #ecf0e9;
+
+$secondary-color-sea: #15847b;
+$secondary-color-sea-300: #5ba9a3;
+$secondary-color-sea-200: #8ac2bd;
+$secondary-color-sea-100: #b9dad7;
+$secondary-color-sea-50: #e3f0ef;
+
+$extra-color-flamingo: #fd8182;
+$extra-color-sunflower: #fcc52d;
+$extra-color-sunflower-100: #feeec0;
+$extra-color-lime: #ccd457;
+$extra-color-sky: #83cec5;
+$extra-color-blossom: #ecbdab;
+$extra-color-dessert: #ddbd88;
+$extra-color-pistachio: #cbd38f;
+$extra-color-stone: #9dbdbc;
+
+$web-color-antrazit: #333333;
+$web-color-grey-500: #666666;
+$web-color-grey-400: #808080;
+$web-color-grey-300: #b4b4b4;
+$web-color-grey-200: #cccccc;
+$web-color-grey-100: #d2d2d2;
+$web-color-grey-50: #e5e5e5;
+$web-color-grey-25: #fbfbfb;
+
+$web-color-pink: #f7d4d8;
+$web-color-light-pink: #fff5f6;
+
+$other-color-ash: #f5f5f5;
+$other-color-ash-2: #f0f0f0;
+$other-color-yellow: #fff7d6;
+
+$all-colours: (
+	'primary-color-red': $primary-color-red,
+	'primary-color-black': $primary-color-black,
+	'primary-color-white': $primary-color-white,
+	'primary-color-grey': $primary-color-grey,
+	'secondary-color-bor': $secondary-color-bor,
+	'secondary-color-bor-300': $secondary-color-bor-300,
+	'secondary-color-bor-200': $secondary-color-bor-200,
+	'secondary-color-bor-100': $secondary-color-bor-100,
+	'secondary-color-bor-50': $secondary-color-bor-50,
+	'secondary-color-ter': $secondary-color-ter,
+	'secondary-color-ter-300': $secondary-color-ter-300,
+	'secondary-color-ter-200': $secondary-color-ter-200,
+	'secondary-color-ter-100': $secondary-color-ter-100,
+	'secondary-color-ter-50': $secondary-color-ter-50,
+	'secondary-color-for': $secondary-color-for,
+	'secondary-color-for-300': $secondary-color-for-300,
+	'secondary-color-for-200': $secondary-color-for-200,
+	'secondary-color-for-100': $secondary-color-for-100,
+	'secondary-color-for-50': $secondary-color-for-50,
+	'secondary-color-sea': $secondary-color-sea,
+	'secondary-color-sea-300': $secondary-color-sea-300,
+	'secondary-color-sea-200': $secondary-color-sea-200,
+	'secondary-color-sea-100': $secondary-color-sea-100,
+	'secondary-color-sea-50': $secondary-color-sea-50,
+	'extra-color-flamingo': $extra-color-flamingo,
+	'extra-color-sunflower': $extra-color-sunflower,
+	'extra-color-sunflower-100': $extra-color-sunflower-100,
+	'extra-color-lime': $extra-color-lime,
+	'extra-color-sky': $extra-color-sky,
+	'extra-color-blossom': $extra-color-blossom,
+	'extra-color-dessert': $extra-color-dessert,
+	'extra-color-pistachio': $extra-color-pistachio,
+	'extra-color-stone': $extra-color-stone,
+	'web-color-antrazit': $web-color-antrazit,
+	'web-color-grey-500': $web-color-grey-500,
+	'web-color-grey-400': $web-color-grey-400,
+	'web-color-grey-300': $web-color-grey-300,
+	'web-color-grey-200': $web-color-grey-200,
+	'web-color-grey-100': $web-color-grey-100,
+	'web-color-grey-50': $web-color-grey-50,
+	'web-color-grey-25': $web-color-grey-25,
+	'web-color-pink': $web-color-pink,
+	'web-color-light-pink': $web-color-light-pink,
+	'other-color-ash': $other-color-ash,
+	'other-color-yellow': '$other-color-yellow',
+	'other-color-ash-2': $other-color-ash-2
+);
+
+@each $name, $value in $all-colours {
+	.#{$name} {
+		color: $value;
+	}
+}
+
+@each $name, $value in $all-colours {
+	.#{$name}-bg {
+		background-color: $value;
+	}
+}
+
+.primary-text-color {
+	color: #000000;
+}
