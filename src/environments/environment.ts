@@ -8,13 +8,7 @@ const baseUrl = 'http://localhost:3000';
 
 export const environment = {
 	...environmentDefault,
-	production: false,
-
-	//Auth Endpoints
-	SignIn: `${baseUrl}/auth/signin`,
-	SignUp: `${baseUrl}/auth/signup`,
-	LogOut: `${baseUrl}/auth/logout`,
-	RefreshToken: `${baseUrl}/auth/refresh`
+	production: false
 };
 
 /*

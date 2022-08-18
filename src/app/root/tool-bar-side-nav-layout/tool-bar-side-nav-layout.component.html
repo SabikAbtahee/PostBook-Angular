@@ -1,14 +1,9 @@
-<mat-toolbar color="primary">
-	<span>PostBook</span>
-</mat-toolbar>
-<mat-drawer-container class="example-container" autosize>
-	<mat-drawer #drawer class="example-sidenav" mode="side">
-		<p>Auto-resizing sidenav</p>
-		<p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-		<button (click)="showFiller = !showFiller" mat-raised-button>Toggle extra text</button>
-	</mat-drawer>
-
-	<div class="example-sidenav-content">
-		<button type="button" mat-button (click)="drawer.toggle()">Toggle sidenav</button>
-	</div>
-</mat-drawer-container>
+<mat-sidenav-container class="h-100-p">
+	<mat-sidenav mode="side" [opened]="$isSideNavExpanded | async" class="w-200"
+		>Sidenav content</mat-sidenav
+	>
+	<mat-sidenav-content>
+		<app-tool-bar></app-tool-bar>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>

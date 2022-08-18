@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { PortalKeys } from '@shared';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { CookieService } from 'src/app/core/services/cookie.service';
 import { environment } from '../../../environments/environment';
 import { SignInPayload, SignUpPayload } from '../interfaces/auth.interface';
@@ -33,6 +33,27 @@ export class AuthenticationService {
 			withCredentials: true,
 			observe: 'response'
 		});
+	}
+
+	logout(): Observable<any> {
+		return this.http
+			.post(environment.LogOut, {
+				headers: new HttpHeaders({
+					'Content-Type': 'application/json'
+				}),
+				withCredentials: true,
+				observe: 'response'
+			})
+			.pipe(
+				tap((res) => {
+					this.removeTokens();
+				})
+			);
+	}
+
+	removeTokens() {
+		this.cookieService.eraseCookie(PortalKeys.AccessToken);
+		this.cookieService.eraseCookie(PortalKeys.RefreshToken);
 	}
 
 	setTokens(accessToken: string, refreshToken: string) {

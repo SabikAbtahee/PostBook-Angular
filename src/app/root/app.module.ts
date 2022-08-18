@@ -14,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 import { ConfigModule } from '../config/config.module';
 import { MaterialModule } from '../shared/material.module';
+import { AuthenticationModule } from '../authentication/authentication.module';
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,8 @@ import { MaterialModule } from '../shared/material.module';
 		SharedModule,
 		CoreModule,
 		ConfigModule,
-		MaterialModule
+		MaterialModule,
+		AuthenticationModule
 	],
 	providers: [RootService],
 	bootstrap: [AppComponent]

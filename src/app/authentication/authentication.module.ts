@@ -9,11 +9,13 @@ import { MaterialModule } from '../shared/material.module';
 import { AuthenticationService } from './services/authentication.service';
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '@shared';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'sign-in'
+		redirectTo: 'sign-in',
+		pathMatch: 'full'
 	},
 	{
 		path: 'sign-in',
@@ -38,9 +40,11 @@ const routes: Routes = [
 		SignUpComponent,
 		SignInComponent,
 		ForgotPasswordComponent,
-		SetNewPasswordComponent
+		SetNewPasswordComponent,
+		LogoutComponent
 	],
 	imports: [CommonModule, MaterialModule, SharedModule, CoreModule, RouterModule.forChild(routes)],
+	exports: [LogoutComponent],
 	providers: [AuthenticationService]
 })
 export class AuthenticationModule {}

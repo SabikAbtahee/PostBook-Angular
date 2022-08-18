@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { RootService } from '../services/root.service';
 
 @Component({
 	selector: 'app-tool-bar-side-nav-layout',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./tool-bar-side-nav-layout.component.scss']
 })
 export class ToolBarSideNavLayoutComponent implements OnInit {
-	showFiller = false;
-	constructor() {}
+	$isSideNavExpanded: Subject<boolean>;
 
-	ngOnInit(): void {}
+	constructor(private rootService: RootService) {}
+
+	ngOnInit(): void {
+		this.$isSideNavExpanded = this.rootService.$isSideNavExpanded;
+	}
 }

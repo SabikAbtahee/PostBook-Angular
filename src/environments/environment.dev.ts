@@ -9,10 +9,10 @@ const baseUrl = 'http://127.0.0.1:3000';
 export const environment = {
 	production: false,
 	//Auth Endpoints
-	SignIn: `${baseUrl}/auth/signin`,
-	SignUp: `${baseUrl}/auth/signup`,
-	LogOut: `${baseUrl}/auth/logout`,
-	RefreshToken: `${baseUrl}/auth/refresh`,
+	// SignIn: `${baseUrl}/auth/signin`,
+	// SignUp: `${baseUrl}/auth/signup`,
+	// LogOut: `${baseUrl}/auth/logout`,
+	// RefreshToken: `${baseUrl}/auth/refresh`,
 	...environmentDefault
 };
 
