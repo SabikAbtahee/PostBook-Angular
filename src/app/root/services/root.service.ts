@@ -10,8 +10,12 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export class RootService {
 	$isSideNavExpanded: BehaviorSubject<boolean>;
 	isSideNavExpanded: boolean = true;
+
+	currentUser: BehaviorSubject<any>;
+
 	constructor(private router: Router, private http: HttpClient) {
 		this.$isSideNavExpanded = new BehaviorSubject<boolean>(true);
+		this.currentUser = new BehaviorSubject<any>(null);
 	}
 
 	alterSideNav() {

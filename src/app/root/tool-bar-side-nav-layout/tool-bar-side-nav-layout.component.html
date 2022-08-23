@@ -1,9 +1,22 @@
-<mat-sidenav-container class="h-100-p">
-	<mat-sidenav mode="side" [opened]="$isSideNavExpanded | async" class="w-200"
-		>Sidenav content</mat-sidenav
-	>
+<app-tool-bar></app-tool-bar>
+<mat-sidenav-container class="x">
+	<mat-sidenav mode="side" [opened]="$isSideNavExpanded | async" class="w-240 sidenav-opened">
+		<mat-nav-list>
+			<div *ngFor="let content of navigation; let i = index">
+				<mat-list-item
+					(click)="route(content.Route); selectRow(i)"
+					[class.active]="i == selectedRow"
+					class="cursor-pointer px-24 font-size-16"
+				>
+					<i class="material-icons-outlined mr-16">
+						{{ content.Icon }}
+					</i>
+					<span> {{ content.Name }}</span>
+				</mat-list-item>
+			</div>
+		</mat-nav-list>
+	</mat-sidenav>
 	<mat-sidenav-content>
-		<app-tool-bar></app-tool-bar>
 		<router-outlet></router-outlet>
 	</mat-sidenav-content>
 </mat-sidenav-container>

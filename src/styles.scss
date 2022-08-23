@@ -2,7 +2,7 @@
 @import './styles/common.scss';
 @import './styles/typography.scss';
 @import '~@angular/material/theming';
-@import './styles//color.scss';
+@import './styles/color.scss';
 
 html,
 body {
@@ -18,9 +18,11 @@ $custom-typography: mat-typography-config(
 );
 @include mat-core($custom-typography);
 
+html,
 body {
 	margin: 0;
 	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	overflow-y: hidden;
 }
 
 .snackbar {
@@ -32,4 +34,21 @@ body {
 	height: 24px;
 	width: 24px;
 	font-size: 24px;
+}
+
+.active {
+	background: $custom-color-1 !important;
+	color: $primary-color-white !important;
+}
+
+.mat-card {
+	padding: 0px !important;
+}
+
+.mat-dialog-container {
+	padding: 0px !important;
+}
+
+.mat-card-header-text {
+	margin: 0px !important;
 }

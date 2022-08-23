@@ -8,5 +8,6 @@ export const environmentDefault = {
 	SignUp: `${baseUrl}/auth/signup`,
 	LogOut: `${baseUrl}/auth/logout`,
 	RefreshToken: `${baseUrl}/auth/refresh`,
-	User: `${baseUrl}/users`
+	User: `${baseUrl}/users`,
+	Post: `${baseUrl}/post`
 };

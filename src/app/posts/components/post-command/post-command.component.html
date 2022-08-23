@@ -1,0 +1,62 @@
+<div>
+	<div class="px-24 py-16 header-2">Create Post</div>
+	<mat-divider></mat-divider>
+	<form [formGroup]="postForm">
+		<div class="p-24">
+			<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px" class="w-100-p">
+				<div class="w-100-p">
+					<mat-form-field appearance="outline" class="w-100-p">
+						<mat-label>Title</mat-label>
+						<input matInput placeholder="Give your post a title" formControlName="Title" />
+						<mat-error *ngIf="postForm.get('Title')?.errors">
+							<span *ngIf="postForm.get('Title')?.errors?.['required']">Title is required</span>
+						</mat-error>
+					</mat-form-field>
+				</div>
+
+				<div class="w-100-p">
+					<mat-form-field appearance="outline" class="w-100-p">
+						<mat-label>Description</mat-label>
+						<textarea
+							matInput
+							placeholder="Whats your post?"
+							formControlName="Description"
+						></textarea>
+						<mat-error *ngIf="postForm.get('Description')?.errors">
+							<span *ngIf="postForm.get('Description')?.errors?.['required']"
+								>Description is required</span
+							>
+						</mat-error>
+					</mat-form-field>
+				</div>
+
+				<div class="w-100-p">
+					<mat-form-field appearance="outline" class="w-100-p">
+						<mat-label>Status</mat-label>
+						<mat-select formControlName="Status">
+							<div *ngFor="let i of status">
+								<mat-option [value]="i.Value">{{ i.Key }}</mat-option>
+							</div>
+						</mat-select>
+
+						<mat-error *ngIf="postForm.get('Status')?.errors">
+							<span *ngIf="postForm.get('Status')?.errors?.['required']">Status is required</span>
+						</mat-error>
+					</mat-form-field>
+				</div>
+
+				<!-- <div class="w-100-p">
+					<input type="file" name="image" />
+				</div> -->
+			</div>
+		</div>
+		<mat-divider></mat-divider>
+
+		<div fxLayout="row" fxLayoutAlign="space-between center" class="p-12">
+			<button mat-stroked-button class="w-224" color="warn" (click)="closeDialog()">Cancel</button>
+			<button type="submit" mat-raised-button class="w-224" color="primary" (click)="submit()">
+				Confirm
+			</button>
+		</div>
+	</form>
+</div>

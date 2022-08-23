@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostComponent } from './components/post/post.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PostCardComponent } from './components/post-card/post-card.component';
+import { MaterialModule } from '../shared/material.module';
+import { PostService } from './services/post.service';
+import { SharedModule } from '../shared/shared.module';
+import { PostCommandComponent } from './components/post-command/post-command.component';
 
 const routes: Routes = [
 	{
@@ -11,7 +16,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	declarations: [PostComponent],
-	imports: [CommonModule, RouterModule.forChild(routes)]
+	declarations: [PostComponent, PostCardComponent, PostCommandComponent],
+	imports: [CommonModule, RouterModule.forChild(routes), SharedModule, MaterialModule],
+	providers: [PostService]
 })
 export class PostsModule {}

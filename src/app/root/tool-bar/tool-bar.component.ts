@@ -34,6 +34,7 @@ export class ToolBarComponent implements OnInit {
 				})
 			)
 			.subscribe((res) => {
+				this.rootService.currentUser.next(res);
 				this.username = res?.UserName;
 			});
 	}

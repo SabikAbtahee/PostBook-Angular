@@ -8,3 +8,5 @@ export * from './models/toast-message.model';
 export * from './components/error-toast/error-toast.component';
 export * from './components/success-toast/success-toast.component';
 export * from './constants/postbook.const';
+
+export * from './enums/shared.enum';

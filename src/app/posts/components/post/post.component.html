@@ -1,1 +1,12 @@
-<p>post works!</p>
+<div class="p-24">
+	<div fxLayout="row" fxLayoutAlign="end center" class="mb-24">
+		<button (click)="createPost()" mat-raised-button color="primary" class="w-200">
+			Create Post
+		</button>
+	</div>
+	<div fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="12px">
+		<div *ngFor="let i of posts">
+			<app-post-card [post]="i" (fetchData)="getPosts()"></app-post-card>
+		</div>
+	</div>
+</div>

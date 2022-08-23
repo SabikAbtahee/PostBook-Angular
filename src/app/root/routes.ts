@@ -16,6 +16,11 @@ export const routes: Routes = [
 			{
 				path: 'posts',
 				loadChildren: () => import('../posts/posts.module').then((module) => module.PostsModule)
+			},
+			{
+				path: 'courses',
+				loadChildren: () =>
+					import('../courses/courses.module').then((module) => module.CoursesModule)
 			}
 		]
 	},
