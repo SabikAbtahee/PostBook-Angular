@@ -11,7 +11,7 @@ export interface Post {
 	Title: string;
 	Author: User;
 	Description: string;
-	LastUpdateDate: Date;
+	LastUpdateDate: any;
 	Status: Status;
 	Likes: string[];
 }

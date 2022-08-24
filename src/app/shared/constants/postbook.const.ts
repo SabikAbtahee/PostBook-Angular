@@ -13,21 +13,21 @@ export const Navigation = [
 		Route: 'posts',
 		Icon: 'apps'
 	},
-	{
-		Name: 'Courses',
-		Route: 'courses',
-		Icon: 'auto_stories'
-	},
+	// {
+	// 	Name: 'Courses',
+	// 	Route: 'courses',
+	// 	Icon: 'auto_stories'
+	// },
 	{
 		Name: 'Quiz',
 		Route: 'quiz',
 		Icon: 'quiz'
-	},
-	{
-		Name: 'Book Store',
-		Route: 'book-store',
-		Icon: 'storefront'
 	}
+	// {
+	// 	Name: 'Book Store',
+	// 	Route: 'book-store',
+	// 	Icon: 'storefront'
+	// }
 ];
 
 export const StatusConst = [
