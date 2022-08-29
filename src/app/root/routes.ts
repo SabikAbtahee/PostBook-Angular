@@ -21,6 +21,10 @@ export const routes: Routes = [
 				path: 'courses',
 				loadChildren: () =>
 					import('../courses/courses.module').then((module) => module.CoursesModule)
+			},
+			{
+				path: 'quiz',
+				loadChildren: () => import('../quiz/quiz.module').then((module) => module.QuizModule)
 			}
 		]
 	},
