@@ -24,8 +24,8 @@ export const Navigation = [
 		Icon: 'quiz'
 	},
 	{
-		Name: 'Book Store',
-		Route: 'book-store',
+		Name: 'NSU Book Shop',
+		Route: 'shop',
 		Icon: 'storefront'
 	}
 ];
