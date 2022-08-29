@@ -20,5 +20,7 @@ export class CourseCardComponent implements OnInit {
 		this.courseService.navigateToDetail(id);
 	}
 
-	gotoQuiz() {}
+	gotoQuiz() {
+		this.courseService.navigateToQuiz();
+	}
 }

@@ -12,6 +12,10 @@ export class CourseService {
 		this.router.navigate([`/courses/${id}`]);
 	}
 
+	navigateToQuiz() {
+		this.router.navigate([`/quiz`]);
+	}
+
 	getCourses(): Observable<any> {
 		return this.http.get(environment.Course, {
 			headers: new HttpHeaders({
