@@ -9,5 +9,6 @@ export const environmentDefault = {
 	LogOut: `${baseUrl}/auth/logout`,
 	RefreshToken: `${baseUrl}/auth/refresh`,
 	User: `${baseUrl}/users`,
-	Post: `${baseUrl}/post`
+	Post: `${baseUrl}/post`,
+	Course: `${baseUrl}/course`
 };

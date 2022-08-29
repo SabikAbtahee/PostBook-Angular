@@ -1,0 +1,38 @@
+<div class="p-24">
+	<div fxLayout="row" fxLayoutAlign="start start">
+		<div fxFlex="80">
+			<div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="16px">
+				<div class="header-1">{{ currentChapter?.Title }}</div>
+				<div class="body-2 white-space-pre-line">{{ currentChapter?.Description }}</div>
+				<div fxLayout="column" fxLayoutAlign="center center" class="w-100-p h-600">
+					<iframe
+						class="responsive-iframe"
+						[src]="currentChapter?.VideoSourceLink"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+					></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="right-fixed" fxFlex="20">
+			<mat-selection-list #chaptersList [multiple]="false">
+				<mat-list-option
+					*ngFor="let chapter of currentCourse.Chapters; let i = index"
+					[value]="chapter"
+					[selected]="chapter && i == 0"
+					(click)="changeChapter(chapter)"
+				>
+					<mat-icon *ngIf="!chapter.IsComplete" matListIcon class="warning-color"
+						>error_outline</mat-icon
+					>
+
+					<mat-icon *ngIf="chapter.IsComplete" matListIcon class="success-color">verified</mat-icon>
+
+					<span>{{ chapter.Title }}</span>
+				</mat-list-option>
+			</mat-selection-list>
+		</div>
+	</div>
+</div>

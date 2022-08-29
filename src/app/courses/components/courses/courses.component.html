@@ -1,1 +1,9 @@
-<p>courses works!</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="w-100-p h-108 custom-color-2-bg">
+	<div class="header-1">Start your Learning Journey with NSU-Learners</div>
+</div>
+
+<div class="p-24" fxLayout="row" fxLayoutAlign="space-between center">
+	<div *ngFor="let course of Courses">
+		<app-course-card [courseInput]="course"></app-course-card>
+	</div>
+</div>
