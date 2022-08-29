@@ -65,32 +65,31 @@ export class SignUpComponent implements OnInit {
 	submit() {
 		if (this.signUpForm.valid) {
 			this.isLoading = true;
-			this.authService
-				.signUp(this.prepareSignUpPayload())
-				.pipe(
-					takeUntil(this._unsubscribeAll),
-					map((res) => {
-						if (res?.body) return res.body;
-						return null;
-					})
-				)
-				.subscribe({
-					next: (res: TokenResponse): void => {
-						this.isLoading = false;
-						this.authService.setTokens(res.access_token, res.refresh_token);
-						this.utilService.openSnackBarGivenComponent(SuccessToastComponent, {
-							Data: 'User Created Successfully'
-						});
-						this.authService.redirectToHome();
-					},
-					error: (err: HttpErrorResponse) => {
-						this.isLoading = false;
-						let error: ErrorResponse = err.error;
-						this.utilService.openSnackBarGivenComponent(ErrorToastComponent, {
-							Data: error.message[0]
-						});
-					}
-				});
+			this.authService.signUp(this.prepareSignUpPayload());
+			// .pipe(
+			// 	takeUntil(this._unsubscribeAll),
+			// 	map((res) => {
+			// 		if (res?.body) return res.body;
+			// 		return null;
+			// 	})
+			// )
+			// .subscribe({
+			// 	next: (res: TokenResponse): void => {
+			// 		this.isLoading = false;
+			// 		this.authService.setTokens(res.access_token, res.refresh_token);
+			// 		this.utilService.openSnackBarGivenComponent(SuccessToastComponent, {
+			// 			Data: 'User Created Successfully'
+			// 		});
+			// 		this.authService.redirectToHome();
+			// 	},
+			// 	error: (err: HttpErrorResponse) => {
+			// 		this.isLoading = false;
+			// 		let error: ErrorResponse = err.error;
+			// 		this.utilService.openSnackBarGivenComponent(ErrorToastComponent, {
+			// 			Data: error.message[0]
+			// 		});
+			// 	}
+			// });
 		}
 	}
 }

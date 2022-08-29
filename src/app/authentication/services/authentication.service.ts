@@ -2,8 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { PortalKeys } from '@shared';
-import { Observable, tap } from 'rxjs';
-import { CookieService } from 'src/app/core/services/cookie.service';
+import { Observable, of, tap } from 'rxjs';
+import { CookieService } from '../../core/services/cookie.service';
+import { RootService } from '../../root/services/root.service';
 import { environment } from '../../../environments/environment';
 import { SignInPayload, SignUpPayload } from '../interfaces/auth.interface';
 
@@ -12,43 +13,60 @@ export class AuthenticationService {
 	constructor(
 		private http: HttpClient,
 		private cookieService: CookieService,
-		private router: Router
+		private router: Router,
+		private rootService: RootService
 	) {}
 
-	signIn(signInPayload: SignInPayload): Observable<any> {
-		return this.http.post(environment.SignIn, signInPayload, {
-			headers: new HttpHeaders({
-				'Content-Type': 'application/json'
-			}),
-			withCredentials: true,
-			observe: 'response'
-		});
+	signIn(signInPayload: SignInPayload) {
+		let a = localStorage.getItem(signInPayload.UserName);
+		if (a) {
+			this.rootService.currentUser.next({ ...JSON.parse(a), Roles: ['Admin'] });
+
+			signInPayload.Password == JSON.parse(a).Password;
+			this.redirectToHome();
+		}
+		return false;
+
+		// return this.http.post(environment.SignIn, signInPayload, {
+		// 	headers: new HttpHeaders({
+		// 		'Content-Type': 'application/json'
+		// 	}),
+		// 	withCredentials: true,
+		// 	observe: 'response'
+		// });
 	}
 
-	signUp(signUpPayload: SignUpPayload): Observable<any> {
-		return this.http.post(environment.SignUp, signUpPayload, {
-			headers: new HttpHeaders({
-				'Content-Type': 'application/json'
-			}),
-			withCredentials: true,
-			observe: 'response'
-		});
+	signUp(signUpPayload: SignUpPayload) {
+		this.rootService.currentUser.next({ ...signUpPayload, Roles: ['Admin'] });
+
+		localStorage.setItem(signUpPayload.UserName, JSON.stringify(signUpPayload));
+		this.redirectToHome();
+
+		// return this.http.post(environment.SignUp, signUpPayload, {
+		// 	headers: new HttpHeaders({
+		// 		'Content-Type': 'application/json'
+		// 	}),
+		// 	withCredentials: true,
+		// 	observe: 'response'
+		// });
 	}
 
 	logout(): Observable<any> {
-		return this.http
-			.post(environment.LogOut, {
-				headers: new HttpHeaders({
-					'Content-Type': 'application/json'
-				}),
-				withCredentials: true,
-				observe: 'response'
-			})
-			.pipe(
-				tap((res) => {
-					this.removeTokens();
-				})
-			);
+		this.redirectToSignIn();
+		return of(null);
+		// return this.http
+		// 	.post(environment.LogOut, {
+		// 		headers: new HttpHeaders({
+		// 			'Content-Type': 'application/json'
+		// 		}),
+		// 		withCredentials: true,
+		// 		observe: 'response'
+		// 	})
+		// 	.pipe(
+		// 		tap((res) => {
+		// 			this.removeTokens();
+		// 		})
+		// 	);
 	}
 
 	removeTokens() {
