@@ -51,29 +51,33 @@ export class SignInComponent implements OnInit, OnDestroy {
 	submit() {
 		if (this.signInForm.valid) {
 			this.isLoading = true;
-			this.authService
-				.signIn(this.prepareSignInPayload())
-				.pipe(
-					takeUntil(this._unsubscribeAll),
-					map((res) => {
-						if (res?.body) return res.body;
-						return null;
-					})
-				)
-				.subscribe({
-					next: (res: TokenResponse): void => {
-						this.isLoading = false;
-						this.authService.setTokens(res.access_token, res.refresh_token);
-						this.authService.redirectToHome();
-					},
-					error: (err: HttpErrorResponse) => {
-						this.isLoading = false;
-						let error: ErrorResponse = err.error;
-						this.utilService.openSnackBarGivenComponent(ErrorToastComponent, {
-							Data: error.message[0]
-						});
-					}
+			let a = this.authService.signIn(this.prepareSignInPayload());
+			if (!a) {
+				this.utilService.openSnackBarGivenComponent(ErrorToastComponent, {
+					Data: 'Invalid'
 				});
+			}
+			// .pipe(
+			// 	takeUntil(this._unsubscribeAll),
+			// 	map((res) => {
+			// 		if (res?.body) return res.body;
+			// 		return null;
+			// 	})
+			// )
+			// .subscribe({
+			// 	next: (res: TokenResponse): void => {
+			// 		this.isLoading = false;
+			// 		this.authService.setTokens(res.access_token, res.refresh_token);
+			// 		this.authService.redirectToHome();
+			// 	},
+			// 	error: (err: HttpErrorResponse) => {
+			// 		this.isLoading = false;
+			// 		let error: ErrorResponse = err.error;
+			// 		this.utilService.openSnackBarGivenComponent(ErrorToastComponent, {
+			// 			Data: error.message[0]
+			// 		});
+			// 	}
+			// });
 		}
 	}
 
