@@ -7,6 +7,7 @@ import { MaterialModule } from '../shared/material.module';
 import { PostService } from './services/post.service';
 import { SharedModule } from '../shared/shared.module';
 import { PostCommandComponent } from './components/post-command/post-command.component';
+import { CookieComponent } from './components/cookie/cookie.component';
 
 const routes: Routes = [
 	{
@@ -16,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	declarations: [PostComponent, PostCardComponent, PostCommandComponent],
+	declarations: [PostComponent, PostCardComponent, PostCommandComponent, CookieComponent],
 	imports: [CommonModule, RouterModule.forChild(routes), SharedModule, MaterialModule],
 	providers: [PostService]
 })

@@ -4,6 +4,7 @@ import { Post } from '@shared';
 import { first, map } from 'rxjs';
 import { RootService } from '../../../root/services/root.service';
 import { PostService } from '../../services/post.service';
+import { CookieComponent } from '../cookie/cookie.component';
 import { PostCommandComponent } from '../post-command/post-command.component';
 
 @Component({
@@ -74,6 +75,11 @@ export class PostComponent implements OnInit {
 			this.user = res;
 			this.getPosts();
 		});
+		if (!localStorage.getItem('cookie')) {
+			this.dialog.open(CookieComponent, {
+				width: '600px'
+			});
+		}
 	}
 
 	getPosts() {

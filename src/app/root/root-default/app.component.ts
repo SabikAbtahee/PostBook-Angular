@@ -6,11 +6,9 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-	title = 'PostBook TEST';
+	title = 'Post Book';
 
 	constructor() {}
 
-	ngOnInit() {
-		console.log('what');
-	}
+	ngOnInit() {}
 }

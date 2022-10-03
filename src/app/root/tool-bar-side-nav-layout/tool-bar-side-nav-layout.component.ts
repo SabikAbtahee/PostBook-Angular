@@ -33,7 +33,7 @@ export class ToolBarSideNavLayoutComponent implements OnInit {
 		let currentUrl = this.router.url;
 		let count = 0;
 		for (let i of this.navigation) {
-			if (currentUrl == `/${i.Route}`) {
+			if (currentUrl.includes(`/${i.Route}`)) {
 				this.selectedRow = count;
 				break;
 			}

@@ -11,7 +11,7 @@ $warning-color: #c4b350;
 $custom-icon-color-1: #d82034;
 
 $custom-color-1: #2a6a89;
-
+$custom-color-2: #7d83d6;
 // New Color Guidelinewise
 // Change sn config colors accordingly
 
@@ -116,7 +116,8 @@ $all-colours: (
 	'web-color-light-pink': $web-color-light-pink,
 	'other-color-ash': $other-color-ash,
 	'other-color-yellow': '$other-color-yellow',
-	'other-color-ash-2': $other-color-ash-2
+	'other-color-ash-2': $other-color-ash-2,
+	'custom-color-2': $custom-color-2
 );
 
 @each $name, $value in $all-colours {
@@ -133,4 +134,12 @@ $all-colours: (
 
 .primary-text-color {
 	color: #000000;
+}
+
+.success-color {
+	color: $success-color;
+}
+
+.warning-color {
+	color: $warning-color;
 }

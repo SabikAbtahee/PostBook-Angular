@@ -12,16 +12,6 @@ export const Navigation = [
 		Name: 'Posts',
 		Route: 'posts',
 		Icon: 'apps'
-	},
-	// {
-	// 	Name: 'Courses',
-	// 	Route: 'courses',
-	// 	Icon: 'auto_stories'
-	// },
-	{
-		Name: 'Quiz',
-		Route: 'quiz',
-		Icon: 'quiz'
 	}
 	// {
 	// 	Name: 'Book Store',
