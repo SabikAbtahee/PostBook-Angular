@@ -5,7 +5,7 @@ import { PortalKeys } from '@shared';
 import { Observable, tap } from 'rxjs';
 import { CookieService } from 'src/app/core/services/cookie.service';
 import { environment } from '../../../environments/environment';
-import { SignInPayload, SignUpPayload } from '../interfaces/auth.interface';
+import { ForgotPasswordPayload, SignInPayload, SignUpPayload } from '../interfaces/auth.interface';
 
 @Injectable()
 export class AuthenticationService {
@@ -27,6 +27,16 @@ export class AuthenticationService {
 
 	signUp(signUpPayload: SignUpPayload): Observable<any> {
 		return this.http.post(environment.SignUp, signUpPayload, {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			}),
+			withCredentials: true,
+			observe: 'response'
+		});
+	}
+
+	sendResetPasswordLink(forgotPasswordPayload: ForgotPasswordPayload): Observable<any> {
+		return this.http.post(environment.ForgotPassword, forgotPasswordPayload, {
 			headers: new HttpHeaders({
 				'Content-Type': 'application/json'
 			}),
@@ -71,5 +81,9 @@ export class AuthenticationService {
 
 	redirectToSignIn() {
 		this.router.navigate(['/authentication/sign-in']);
+	}
+
+	redirectToForgotPassword() {
+		this.router.navigate(['/authentication/forgot-password']);
 	}
 }

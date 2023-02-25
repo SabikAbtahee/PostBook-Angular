@@ -7,6 +7,7 @@ export const environmentDefault = {
 	SignIn: `${baseUrl}/auth/signin`,
 	SignUp: `${baseUrl}/auth/signup`,
 	LogOut: `${baseUrl}/auth/logout`,
+	ForgotPassword: `${baseUrl}/auth/forgot-password`,
 	RefreshToken: `${baseUrl}/auth/refresh`,
 	User: `${baseUrl}/users`,
 	Post: `${baseUrl}/post`

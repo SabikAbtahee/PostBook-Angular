@@ -84,4 +84,8 @@ export class SignInComponent implements OnInit, OnDestroy {
 	goToHome() {
 		this.authService.redirectToHome();
 	}
+
+	gotoForgotPassword() {
+		this.authService.redirectToForgotPassword();
+	}
 }

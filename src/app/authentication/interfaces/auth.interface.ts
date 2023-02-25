@@ -9,6 +9,10 @@ export interface SignUpPayload {
 	Email: string;
 }
 
+export interface ForgotPasswordPayload {
+	Email: string;
+}
+
 export interface TokenResponse {
 	access_token: string;
 	refresh_token: string;
